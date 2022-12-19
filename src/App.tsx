@@ -1,5 +1,13 @@
+import { CarForm } from './components/CarForm';
+import { CarList } from './components/CarList';
+
 function App() {
-	return <h1>Hello Vite</h1>;
+	return (
+		<div>
+			<CarForm />
+			<CarList />
+		</div>
+	);
 }
 
 export default App;
