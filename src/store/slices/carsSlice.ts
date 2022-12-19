@@ -1,5 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+export interface Car {
+	name: string;
+	cost: number;
+	id: string;
+}
+
 const carsSlice = createSlice({
 	name: 'cars',
 	initialState: {

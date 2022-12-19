@@ -8,3 +8,8 @@ export const store = configureStore({
 		cars: carsReducer,
 	},
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+
+export * from './slices/carsSlice';
+export * from './slices/formSlice';
