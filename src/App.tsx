@@ -1,6 +1,7 @@
 import { CarForm } from './components/CarForm';
 import { CarList } from './components/CarList';
 import { CarSearch } from './components/CarSearch';
+import { CarPrice } from './components/CarPrice';
 
 function App() {
 	return (
@@ -8,6 +9,7 @@ function App() {
 			<CarForm />
 			<CarSearch />
 			<CarList />
+			<CarPrice />
 		</div>
 	);
 }

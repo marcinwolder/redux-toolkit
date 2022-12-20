@@ -5,7 +5,14 @@ import { RootState, removeCar } from '../store';
 import { FaTrashAlt } from 'react-icons/fa';
 
 export const CarList: React.FC = () => {
-	const data = useSelector((state: RootState) => state.cars.data);
+	const data = useSelector((state: RootState) => {
+		const {
+			cars: { data, searchValue },
+		} = state;
+		return data.filter((car) =>
+			car.name.toLowerCase().includes(searchValue.toLowerCase())
+		);
+	});
 	const dispatch = useDispatch();
 
 	const listElements = () => {
@@ -20,7 +27,7 @@ export const CarList: React.FC = () => {
 				>
 					<div className='flex justify-between flex-1'>
 						<p>{car.name}</p>
-						<p>{car.cost}$</p>
+						<p>${car.cost}</p>
 					</div>
 					<button className='group' onClick={handleRemove}>
 						<FaTrashAlt className='text-red-600 group-hover:text-red-700' />
