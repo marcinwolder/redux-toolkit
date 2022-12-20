@@ -13,7 +13,6 @@ dist-ssr
 
 # Editor directories and files
 package-lock.json
-package.json
 postcss.config.cjs
 tailwind.config.cjs
 tsconfig.json
