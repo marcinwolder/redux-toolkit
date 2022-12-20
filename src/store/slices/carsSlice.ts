@@ -11,10 +11,18 @@ const carsSlice = createSlice({
 	initialState: {
 		searchValue: '',
 		data: [],
+	} as {
+		searchValue: string;
+		data: Car[];
 	},
 	reducers: {
-		addCar() {},
-		removeCar() {},
+		addCar(state, action: { type: string; payload: Car }) {
+			state.data.push(action.payload);
+		},
+		removeCar(state, action: { type: string; payload: string }) {
+			const newState = state.data.filter((car) => car.id !== action.payload);
+			return { ...state, data: newState };
+		},
 		changeSearchValue() {},
 	},
 });

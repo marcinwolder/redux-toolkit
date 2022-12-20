@@ -1,6 +1,7 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux/es/exports';
-import { RootState, setCost, setName } from '../store';
+import React, { FormEvent } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { nanoid } from '@reduxjs/toolkit';
+import { RootState, setCost, setName, addCar } from '../store';
 
 export const CarForm: React.FC = () => {
 	const dispatch = useDispatch();
@@ -8,6 +9,16 @@ export const CarForm: React.FC = () => {
 		name: state.form.name,
 		cost: state.form.cost,
 	}));
+	const handleSubmit = (e: FormEvent) => {
+		e.preventDefault();
+		dispatch(
+			addCar({
+				name,
+				cost,
+				id: nanoid(),
+			})
+		);
+	};
 	return (
 		<form>
 			<label htmlFor='carName'>Car name:</label>
@@ -28,6 +39,9 @@ export const CarForm: React.FC = () => {
 				}}
 				name='carCost'
 			/>
+			<button onClick={handleSubmit} type='submit'>
+				Add car
+			</button>
 		</form>
 	);
 };
