@@ -23,7 +23,9 @@ const carsSlice = createSlice({
 			const newState = state.data.filter((car) => car.id !== action.payload);
 			return { ...state, data: newState };
 		},
-		changeSearchValue() {},
+		changeSearchValue(state, action: { type: string; payload: string }) {
+			state.searchValue = action.payload;
+		},
 	},
 });
 

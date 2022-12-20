@@ -22,8 +22,8 @@ export const CarList: React.FC = () => {
 						<p>{car.name}</p>
 						<p>{car.cost}$</p>
 					</div>
-					<button onClick={handleRemove}>
-						<FaTrashAlt className='text-red-600 hover:text-red-700' />
+					<button className='group' onClick={handleRemove}>
+						<FaTrashAlt className='text-red-600 group-hover:text-red-700' />
 					</button>
 				</div>
 			);

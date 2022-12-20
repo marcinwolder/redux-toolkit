@@ -25,6 +25,7 @@ export const CarForm: React.FC = () => {
 			<form className='flex flex-col'>
 				<label htmlFor='carName'>Car name:</label>
 				<input
+					className='p-1'
 					type='text'
 					value={name}
 					onChange={(e) => {
@@ -34,6 +35,7 @@ export const CarForm: React.FC = () => {
 				/>
 				<label htmlFor='carCost'>Car cost:</label>
 				<input
+					className='p-1'
 					type='number'
 					value={cost || ''}
 					onChange={(e) => {
